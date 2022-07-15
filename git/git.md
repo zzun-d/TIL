@@ -38,7 +38,7 @@ Git기반의 저장소 서버를 제공하는 서비스
   - **git init** 명령어로 로컬 저장소를 생성
   - **.git** 디렉토리에 **버전 관리에 필요한 모든 것**이 들어있음
 
-  ![Untitled](https://github.com/zzun-d/TIL/tree/master/git/git.assets/Untitled.png)
+  ![Untitled](https://github.com/zzun-d/TIL/blob/master/git/git.assets/Untitled.png?raw=true)
 
   - (master) ← git으로 관리됨을 뜻함
 
@@ -76,19 +76,19 @@ Git기반의 저장소 서버를 제공하는 서비스
 
   - 현재 git으로 관리되고 있는 파일들의 상태를 알 수 있음
 
-  ![Untitled (1)](https://github.com/zzun-d/TIL/tree/master/git/git.assets/Untitled (1).png)
+  ![Untitled (1)](https://github.com/zzun-d/TIL/blob/master/git/git.assets/Untitled%20(1).png?raw=true)
 
 - **git commit -m**
 
   - 메세지와 함께 커밋
 
-  ![Untitled (2)](C:\Users\multicampus\Desktop\TIL\TIL\git\git.assets/Untitled (2).png)
+  ![Untitled (2)](https://github.com/zzun-d/TIL/blob/master/git/git.assets/Untitled%20(2).png?raw=true)
 
 - **git log**
 
   - commit history 보기
 
-  ![Untitled (3)](C:\Users\multicampus\Desktop\TIL\TIL\git\git.assets/Untitled (3).png)
+  ![Untitled (3)](https://github.com/zzun-d/TIL/blob/master/git/git.assets/Untitled%20(3).png?raw=true)
 
   **→ commit 뒤에 오는 88eb104ca~~~~ 는 각 commit의 고유 아이디**
 
@@ -97,7 +97,7 @@ Git기반의 저장소 서버를 제공하는 서비스
   - A에 비해서 B가 어떻게 변했는지 나타냄
   - A, B는 각 commit의 고유 아이디(앞에 4자리 까지만 적어도 일반적으로 가능)
 
-  ![Untitled (4)](C:\Users\multicampus\Desktop\TIL\TIL\git\git.assets/Untitled (4).png)
+  ![Untitled (4)](https://github.com/zzun-d/TIL/blob/master/git/git.assets/Untitled%20(4).png?raw=true)
 
 **Github Repository** 생성
 
@@ -110,12 +110,16 @@ Git기반의 저장소 서버를 제공하는 서비스
   - A : push 할 위치(remote_repo)
   - B : 로컬 branch 위치(master)
 
-  ![Untitled (5)](C:\Users\multicampus\Desktop\TIL\TIL\git\git.assets/Untitled (5).png)
+  ![Untitled (5)](https://github.com/zzun-d/TIL/blob/master/git/git.assets/Untitled%20(5).png?raw=true)
 
-  ![Untitled (6)](C:\Users\multicampus\Desktop\TIL\TIL\git\git.assets/Untitled (6).png)
+  ![Untitled (6)](https://github.com/zzun-d/TIL/blob/master/git/git.assets/Untitled%20(6).png?raw=true)
 
 - **git clone {remote_repo}**
 
   - remote repo를 local로 복사
 
-  ![Untitled (7)](C:\Users\multicampus\Desktop\TIL\TIL\git\git.assets/Untitled (7).png)
+  ![Untitled (7)](https://github.com/zzun-d/TIL/blob/master/git/git.assets/Untitled%20(7).png?raw=true)  
+  
+  <br/>
+- **git pull**
+  - 연동된 github repo에 있는 내용을 복제해서 local에 저장한다.
