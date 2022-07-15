@@ -48,11 +48,19 @@
 - **clear**
 
   - CLI창 모두 지우기
+- **vi test.tst**
+  - vi 편집기로 test.txt를 편집하겠다.
+  - i or insert 입력 후 편집 가능
+![untitled](https://github.com/zzun-d/TIL/blob/master/CLI/CLI.assets/Untitled2.png?raw=true)  
 
-  ![~ ←표시가 현재 작업중인 위치(자주 써서 ~표시)](C:\Users\multicampus\Desktop\TIL\TIL\CLI\CLI.assets/Untitled.png)
+  <br/>
 
-  ~ ←표시가 현재 작업중인 위치(자주 써서 ~표시)
+![untitled](https://github.com/zzun-d/TIL/blob/master/CLI/CLI.assets/Untitled.png?raw=true)  
+
+
+~ ←표시가 현재 작업중인 위치(자주 써서 ~표시)
 
 실제 ~ 주소는 **C:\Users\multicampus**
 
-~ 는 **Home directory**라고 함
+\~ 는 **Home directory**라고 함  
+
