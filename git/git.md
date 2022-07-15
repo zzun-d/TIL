@@ -21,7 +21,6 @@ Git기반의 저장소 서버를 제공하는 서비스
 → 삼성 어딘가에 GitLab 서버가 있다.
 
 <aside> 💡 Git ≠ GitHub → 분산 버전 관리 프로그램 그자체 ≠ Git 기반의 저장소 서비스
-
 </aside>
 
 - Github를 사용하면 좋은점
@@ -39,7 +38,7 @@ Git기반의 저장소 서버를 제공하는 서비스
   - **git init** 명령어로 로컬 저장소를 생성
   - **.git** 디렉토리에 **버전 관리에 필요한 모든 것**이 들어있음
 
-  ![Untitled](C:\Users\multicampus\Desktop\TIL\TIL\git\git.assets/Untitled.png)
+  ![Untitled](https://github.com/zzun-d/TIL/tree/master/git/git.assets/Untitled.png)
 
   - (master) ← git으로 관리됨을 뜻함
 
@@ -77,7 +76,7 @@ Git기반의 저장소 서버를 제공하는 서비스
 
   - 현재 git으로 관리되고 있는 파일들의 상태를 알 수 있음
 
-  ![Untitled (1)](C:\Users\multicampus\Desktop\TIL\TIL\git\git.assets/Untitled (1).png)
+  ![Untitled (1)](https://github.com/zzun-d/TIL/tree/master/git/git.assets/Untitled (1).png)
 
 - **git commit -m**
 
