@@ -4,3 +4,22 @@
 - 신입 개발자에게 요구되는 가장 큰 능력, **꾸준히 학습할 수 있나요?**
 - Github 관리의 가장 첫 걸음, 제일 중요한 **장기 프로젝트**
 - 1 일 1 커밋
+
+### [CLI](https://github.com/zzun-d/TIL/tree/master/CLI)
+
+- [CLI abstract](https://github.com/zzun-d/TIL/blob/master/CLI/CLI.md)
+
+### [Markdown](https://github.com/zzun-d/TIL/tree/master/Markdown)
+
+- [Markdown abstract](https://github.com/zzun-d/TIL/blob/master/Markdown/markdown.md)
+
+### [Git](https://github.com/zzun-d/TIL/tree/master/git)
+
+- [git abstract](https://github.com/zzun-d/TIL/blob/master/git/git.md)
+
+### [Tips](https://github.com/zzun-d/TIL/tree/master/tips)
+
+- [VSCode_cmd](https://github.com/zzun-d/TIL/blob/master/tips/VSCode_cmd.md)
+
+  
+
