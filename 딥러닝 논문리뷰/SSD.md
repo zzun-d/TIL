@@ -4,32 +4,32 @@
 
 - **two stage-detector**
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/995bf884-b81a-4891-b209-5fda0a016b65/Untitled.png)
+    ![Untitled](https://github.com/zzun-d/TIL/blob/master/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/asset/ssd/Untitled.png?raw=true)
     
     - regional proposal, classification 순차적으로 / 느리지만 정확
 
 - **single stage-detector**
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/682b79ce-3cb9-44ac-80ea-9e90669a4133/Untitled.png)
+    ![Untitled](https://github.com/zzun-d/TIL/blob/master/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/asset/ssd/Untitled%20(1).png?raw=true)
     
     - regional proposal, classification 동시에 / 빠르지만 정확성이 떨어짐
 
 - **해상도에 따른 feature map**
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3412ac2a-4178-40b5-af0c-509762898dd5/Untitled.png)
+    ![Untitled](https://github.com/zzun-d/TIL/blob/master/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/asset/ssd/Untitled%20(2).png?raw=true)
     
     (b) : SSD, (c) : FPN, (d) : PFPNEt
     
 
 ### 2.  Model
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ada987e5-1eae-417c-8739-bdc4d37fa73d/Untitled.png)
+![Untitled](https://github.com/zzun-d/TIL/blob/master/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/asset/ssd/Untitled%20(3).png?raw=true)
 
 - Base network는 VGG-16을 사용(Conv5_3_layer 까지만)
 - 크기가 다른 feature map 6개를 이용한 것이 특징
     - object의 크기가 작은 것은 해상도가 높은 feature map에서 검출하고 큰 것은 해상도가 낮은feature map에서 검출
         
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/533f1fdd-3de8-40ca-81c5-42620795cb87/Untitled.png)
+        ![Untitled](https://github.com/zzun-d/TIL/blob/master/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/asset/ssd/Untitled%20(4).png?raw=true)
         
 - Classifier : Conv 3 x 3 필터를  (c+4)k 개 이용(c: class 개수, 4: cx, cy, w, h정보, k: default box 개수)
     - default box는 faster R-CNN의 앵커와 동일한 개념이지만 scale정보 추가
@@ -54,11 +54,11 @@
         
         $s'_k = \sqrt {s_ks_k+1}$
         
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e358d4ba-901b-41c2-8794-4c77ba822773/Untitled.png)
+        ![Untitled](https://github.com/zzun-d/TIL/blob/master/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/asset/ssd/Untitled%20(5).png?raw=true)
         
     - feature map을 Conv하여 class와 bbox를 예측한 정보를 담은 Tensor를 생성
         
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b5e2def3-a5b1-40ec-b111-511537dd0047/Untitled.png)
+        ![Untitled](https://github.com/zzun-d/TIL/blob/master/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/asset/ssd/Untitled%20(6).png?raw=true)
         
     
 - 총 예측 bbox 수
@@ -79,19 +79,19 @@
 - **Matching strategy**
     - default box의 IoU가 0.5보다 크고, class가 정답일 경우에는 positive, 아니면 negative
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4e44994c-7ba3-4989-8f3b-734873a5c773/Untitled.png)
+    ![Untitled](https://github.com/zzun-d/TIL/blob/master/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/asset/ssd/Untitled%20(7).png?raw=true)
     
     - default box 1, 2, 3 중에 IoU가 0.5를 넘는 것은 1과 2이므로 1, 2는 positive, 3은 negative
 
 - **Loss function(localization, confidence)**
     - **localization loss: ground truth box와 bbox의 차이로, smooth L1 loss를 이용**
         
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d34a03a4-fc19-42ea-9f0c-199cd6b048bb/Untitled.png)
+        ![Untitled](https://github.com/zzun-d/TIL/blob/master/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/asset/ssd/Untitled%20(8).png?raw=true)
         
     
     - **confidence loss: classification loss → cross-entropy**
         
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1aea0bed-e5bd-4a13-9f17-59a4bc0ccf5e/Untitled.png)
+        ![Untitled](https://github.com/zzun-d/TIL/blob/master/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/asset/ssd/Untitled%20(9).png?raw=true)
         
     - **Total Loss**
         
@@ -102,7 +102,7 @@
 
 - NMS 알고리즘을 이용하여 IoU가 가장 높은 bbox하나만 남김
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b9ae539f-ca64-4f12-9911-eabf784ea199/Untitled.png)
+![Untitled](https://github.com/zzun-d/TIL/blob/master/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/asset/ssd/Untitled%20(10).png?raw=true)
 
 - **Hard Negative Mining**
     - bbox를 8732개를 뽑았지만 그 중 object를 잘 찾아서 bbox한 positive의 수에 비하여 일반 배경을 bbox한 negative의 수가 압도적으로 많을 것.
@@ -116,17 +116,17 @@
 
 ### 4. 결과
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6453f25e-1369-4b75-bb03-63abf8dba720/Untitled.png)
+![Untitled](https://github.com/zzun-d/TIL/blob/master/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/asset/ssd/Untitled%20(11).png?raw=true)
 
 - Faster-R-CNN만큼 정확하고, 훨씬 빠르다
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/77cddfbb-a2c0-4f82-9d54-37077285a06c/Untitled.png)
+![Untitled](https://github.com/zzun-d/TIL/blob/master/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/asset/ssd/Untitled%20(12).png?raw=true)
 
 - SSD의 단점은 작은 object를 잘 잡아내지 못하는 것인데, 그 이유는 작은 object를 detection하는 feature map이 정보의 압축이 덜 된 feature map이기 때문에 성능이 좋지 않다는 분석이 있음.
     
     → data augmentation으로 한계 극복
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c42f5f2f-0384-41ee-88a5-d66dd70a5957/Untitled.png)
+    ![Untitled](https://github.com/zzun-d/TIL/blob/master/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/asset/ssd/Untitled%20(13).png?raw=true)
     
 
 Reference
