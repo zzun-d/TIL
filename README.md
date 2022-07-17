@@ -13,7 +13,7 @@
 
 #### [Git](https://github.com/zzun-d/TIL/tree/master/Git)
 
-#### [Tips](https://github.com/zzun-d/TIL/tree/master/tips)
+#### [Tips](https://github.com/zzun-d/TIL/tree/master/Tips)
 
 #### [For Autonomous Driving](https://github.com/zzun-d/TIL/tree/master/For%20Autonomous%20Driving)
 
