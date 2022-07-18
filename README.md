@@ -22,5 +22,7 @@
 #### [혼공머신](https://github.com/zzun-d/TIL/tree/master/%ED%98%BC%EA%B3%B5%EB%A8%B8%EC%8B%A0)
 
 #### [딥러닝 논문리뷰](https://github.com/zzun-d/TIL/tree/master/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0)
+
+#### [SSAFY](https://github.com/zzun-d/TIL/tree/master/SSAFY)
   
 
