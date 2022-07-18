@@ -9,3 +9,4 @@
   - 여러 줄 한번에 작성 : **alt + ctrl + up or down**
   - 코드 순서 바꾸기 : **alt + up or down**
   - 같은 단어 찾기 : **ctrl + d**
+  - Markdown preview split으로 열기 : **ctrl + k, v**
