@@ -95,7 +95,19 @@ Git기반의 저장소 서버를 제공하는 서비스
     - A, B는 각 commit의 고유 아이디(앞에 4자리 까지만 적어도 일반적으로 가능)
     
     ![Untitled](https://github.com/zzun-d/TIL/blob/master/Git/assets/Untitled%20(4).png?raw=true)
-    
+    <br>
+
+- **git config --global user.name "~~~"**
+- **git config --global user.email "~~~"**
+    - global 옵션을 사용하면 해당 시스템에서 해당 사용자가 사용할 때는 이 정보를 사용함
+    - 최초로 딱 한번만 시도하면 됨
+<br>
+
+- **git config --local user.name "~~~"**
+- **git config --local user.email "~~~"**
+    - global과 반대로 해당 폴더에서는 이 git name, email을 사용한다고 선언
+
+
 
 **Github Repository** 생성
 
