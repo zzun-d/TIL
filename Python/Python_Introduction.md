@@ -80,6 +80,8 @@
 - **IDE(Intergrated development environment)**
     - 통합 개발 환경의 약자로 개발의 필요한 다양하고 강력한 기능을 모아둔 프로그램
     - 보통 개발은 IDE로 진행
+    - **Visual Studio Code**
+    - **Pycharm**
 
 - **Jupyter Notebook**
     - 문법 학습을 위한 최적의 도구
