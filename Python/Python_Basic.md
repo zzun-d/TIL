@@ -477,6 +477,7 @@ print(x, y) # 20 10
 - **암시적 형 변환(Implicit)**
     - 사용자가 의도하지 않고, 파이썬 내부적으로 자료형을 변환
     - bool, Numeric type(int, float)
+    - 암시적 형 변환은 지양하고, 반드시 명시적 형 변환으로 사용
     ```
     print(True + 3) # 4
     print(3 + 5.0) # 8.0
