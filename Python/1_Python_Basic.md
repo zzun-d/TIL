@@ -1,4 +1,4 @@
-# Python Basic
+# 0. Python Basic
 
 ----
 
@@ -13,12 +13,12 @@
 - 변수를 사용해야 하는 이유
 - 일일이 값을 넣는 것도 불편, 오타 위험, 다른 사람이 코드를 알아보기 힘듬 등등
 ex)
-```
+```python
 print(2000)
 print(2000 + 2000)
 print(3000 * 2 + 3500 * 3 + 4000 + 5)
 ```
-```
+```python
 americano_price = 2000
 mocha_price = 3000
 cookie_price = 2000
@@ -47,7 +47,7 @@ print(mocha_price * 2 + lemonade_price * 3 + cake_price * 5)
 
 **각 변수의 값 바꿔서 저장하기**
 - 임시 변수 활용(일반적인 경우)
-```
+```python
 x, y = 10, 20
 tmp = x
 x = y
@@ -55,7 +55,7 @@ y = tmp
 print(x, y) # 20, 10
 ```
 - Pythonic!
-```
+```python
 x, y = 10, 20
 y, x = x, y
 print(x, y) # 20 10
@@ -68,7 +68,7 @@ print(x, y) # 20 10
     - 첫 글자에 숫자가 올 수 없다
     - 길이 제한이 없고, 대소문자를 구별한다
     - 예약어는 변수 이름으로 사용할 수 없다
-    ```
+    ```python
     import keyword
     print(keyword.kwlist)
 
@@ -121,7 +121,7 @@ print(x, y) # 20 10
     - 2진수(binary): 0b
     - 8진수(octal): 0o
     - 16진수(hexadecimal): 0x
-    ```
+    ```python
     print(0b10) # 2
     print(0o30) # 24
     print(0x10) # 16
@@ -133,7 +133,7 @@ print(x, y) # 20 10
     - 0.001, 10.0 등과 같은 유리수와 무리수를 표현하는 자료형
     - **실수 연산시 주의할 점(부동 소수점)**
         - 실수의 값을 처리할 때 의도하지 않은 값이 나올 수 있음
-        ```
+        ```python
         print(3.2 - 3.1) # 0.10000000000000009
         print(1.2 - 1.1) # 0.09999999999999987
         ```
@@ -144,7 +144,7 @@ print(x, y) # 20 10
     - 해결책
         - 값 비교하는 과정에서 정수가 아닌 실수면 주의!
         - 매우 작은 수보다 작은지를 확인하거나 math 모듈 활용
-        ```
+        ```python
         a = 3.2 - 3.1 # 0.10000000000000009
         b = 1.2 - 1.1 # 0.09999999999999987
 
@@ -168,7 +168,7 @@ print(x, y) # 20 10
 
     - **중첩 따옴표**
         - 작은 따옴표가 들어 있는 경우 큰따옴표로 문자열 생성(반대도 가능)
-        ```
+        ```python
         print("문자열 안에 '작은따옴표'를 사용하면 큰 따옴표로 묶음")
         
         # 문자열 안에 '작은따옴표'를 사용하면 큰 따옴표로 묶음
@@ -178,7 +178,7 @@ print(x, y) # 20 10
 
     - **삼중 따옴표**
         - 따옴표 안에 따옴표를 넣을 때, 여러줄을 나눠 입력할 때 편리
-        ```
+        ```python
         print('''문자열 안에 '작은따옴표'와 "큰따옴표"를 
         함께 사용가능하고,
         여러 줄을 사용할 때도 편리''')
@@ -213,7 +213,7 @@ print(x, y) # 20 10
 
     - **String Interpolation(문자열을 변수를 활용하여 만드는 법)**
         - %-formatting
-        ```
+        ```python
         name = 'Lee'
         score = 3.4
 
@@ -223,7 +223,7 @@ print(x, y) # 20 10
         ```
 
         - str.format()
-        ```
+        ```python
         name = 'Lee'
         score = 3.4
 
@@ -232,7 +232,7 @@ print(x, y) # 20 10
         ```
 
         - f-strings
-        ```
+        ```python
         name = 'Lee'
         score = 3.4
 
@@ -275,7 +275,7 @@ print(x, y) # 20 10
         - A or B: A와 B 모두 Fasle시, False
         - Not: True를 False로, False를 True로
 
-        ```
+        ```python
         num = 10
         print(num >= 100 and num % 3 == 1) # True
         print(True and False) # False
@@ -291,7 +291,7 @@ print(x, y) # 20 10
             - 논리 연산자도 우선순위가 존재함
                 - not, and, or 순으로 우선순위 높음
 
-            ```
+            ```python
             print(not True) # False
             print(not 0) # True
             print(not 'hi') False
@@ -306,7 +306,7 @@ print(x, y) # 20 10
             - 결과가 확실한 경우 두번째 값은 확인하지 않고 첫번째 값 반환
             - and 연산에서 첫번째 값이 False인 경우 무조건 False
             - or 연산에서 첫번째 값이 True인 경우 무조건 True
-            ```
+            ```python
             print(5 and 4) # 4
             print(5 or 3) # 5
             print(0 and 5) # 0
@@ -347,7 +347,7 @@ print(x, y) # 20 10
         - 이런 유연성 때문에 파이썬에서 가장 흔하게 사용
     - sequence 데이터로 인덱스를 이용하여 접근 가능
         - list[i]
-        ```
+        ```python
         list_a = [1, 2, '삼', '사']
         print(list[0]) # 1
         print(list[2]) # '삼'
@@ -369,7 +369,7 @@ print(x, y) # 20 10
         `tuple_b = (1, 2, 3,)`
     - **tuple 대입**
         - 우변의 값을 좌변의 변수에 한 번에 할당하는 과정
-        ```
+        ```python
         x, y = 1, 2
         print(x, y) # 1 2
 
@@ -398,7 +398,7 @@ print(x, y) # 20 10
 - **슬라이싱 연산자**
     - 인덱스와 콜론을 사용하여 문자열의 특정 부분만 잘라낼 수 있음
     - 슬라이싱을 사용할 때 콜론을 기준으로 앞 인덱스는 포함, 뒤 인덱스는 미포함
-    ```
+    ```python
     print([1, 2, 3, 5][1:4]) # [2, 3, 5]
     print('abcd'[2:4]) # 'cd'
     ```
@@ -406,9 +406,10 @@ print(x, y) # 20 10
     <br>
 
     - **sequence를 k 간격으로 슬라이싱**
-    ```
+    ```python
     print([1, 2, 3, 5][0:4:2]) # [1, 3]
     print(range(10)[1:5:3]) # range(1, 5, 3)
+    ```
 
 <br>
 
@@ -437,7 +438,7 @@ print(x, y) # 20 10
         - &: 교집합
         - -: 차집합
         - ^: 대칭차집합(합집합 - 교집합)
-        ```
+        ```python
         set_a = {1, 2, 3, 4}
         set_b = {1, 2, 3, "Hello", (1, 2, 3)}
 
@@ -460,7 +461,7 @@ print(x, y) # 20 10
     - **dictionary 생성**
         - 중괄호({}) 혹은 dict()을 통해 생성
         - key를 통해 value에 접근
-        ```
+        ```python
         dict_a = {1 : 'one', 2 : 'two', 'list' : [1, 2]}
         print(dict_a[1]) # 'one'
         print(dict_a['list']) # [1, 2]
@@ -478,7 +479,7 @@ print(x, y) # 20 10
     - 사용자가 의도하지 않고, 파이썬 내부적으로 자료형을 변환
     - bool, Numeric type(int, float)
     - 암시적 형 변환은 지양하고, 반드시 명시적 형 변환으로 사용
-    ```
+    ```python
     print(True + 3) # 4
     print(3 + 5.0) # 8.0
     ```
@@ -492,7 +493,7 @@ print(x, y) # 20 10
         - str, float → int
         - 단, 형식에 맞는 문자열만 정수로 변환
 
-        ```
+        ```python
         print('3' + 4) # TypeError
         
         # 명시적 타입 변환 필요
@@ -506,7 +507,7 @@ print(x, y) # 20 10
         - str(참고), int → float
         - 단, 형식에 맞는 문자열만 정수로 변환
 
-        ```
+        ```python
         print('3.5' + 3.5) TypeError
 
         # 정수 형식인 경우에도 float으로 타입 변환
@@ -518,7 +519,7 @@ print(x, y) # 20 10
 
     - **str**
         - int, float, list, tuple, dict → str
-        ```
+        ```python
         print(str(1)) # 1
         print(str(1.0)) # 1.0
         print(str([1, 2, 3])) # [1, 2, 3]
