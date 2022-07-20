@@ -1,5 +1,4 @@
-# 0. Python Basic
-
+# 0. Python 기초
 ----
 
 ### 기초 문법

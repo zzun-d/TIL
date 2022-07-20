@@ -1,4 +1,4 @@
-# 1. Python Introduction
+# 1. Python 소개
 ---
 ### 프로그래밍이란?
 
