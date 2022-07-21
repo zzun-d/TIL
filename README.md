@@ -19,7 +19,7 @@
 
 #### [Algorythm](https://github.com/zzun-d/TIL/tree/master/Algorythm)
 
-#### [혼공머신](https://github.com/zzun-d/TIL/tree/master/%ED%98%BC%EA%B3%B5%EB%A8%B8%EC%8B%A0)
+#### [밑바닥부터 시작하는 딥러닝](https://github.com/zzun-d/TIL/tree/master/%EB%B0%91%EB%B0%94%EB%8B%A5%EB%B6%80%ED%84%B0%20%EC%8B%9C%EC%9E%91%ED%95%98%EB%8A%94%20%EB%94%A5%EB%9F%AC%EB%8B%9D)
 
 #### [딥러닝 논문리뷰](https://github.com/zzun-d/TIL/tree/master/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0)
 
