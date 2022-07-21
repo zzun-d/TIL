@@ -256,7 +256,7 @@ print(result)
     - 함수를 설명하는 **Docstring**은 함수 body 앞에 선택적으로 작성 가능
     - ''''''을 이용
     - 함수는 parameter를 넘겨줄 수 있음
-    - 함수는 동작 후 return을 통해 결과값을 전달
+    - 함수는 동작 후 return을 통해 결괏값을 전달
     ```python
     def func_a(parameter):
         # code block
@@ -390,8 +390,8 @@ print(result)
 
     <br>
 
-- **결과값(Output)**
-    - 결과값에 따라서 Void function, Value returning function으로 나뉨
+- **결괏값(Output)**
+    - 결괏값에 따라서 Void function, Value returning function으로 나뉨
     - Void function : 명시적인 return값이 없는 경우, None을 반환하고 종료
     - Value returning function : 함수 실행 후, return문을 통해 값 반환
         - return을 하게 되면, 값 반환 후 함수 바로 종료
@@ -399,7 +399,7 @@ print(result)
     > print를 사용하면 호출될 때마다 값이 출력(주로 테스트를 위해 사용)
     > 데이터 처리를 위해서는 return을 사용해야함
     - 두 개 이상의 값도 반환이 가능
-        - 반환 값으로 튜플을 사용
+        - 반환 값으로 튜플을 사용(return값 변경을 방지하기 위해)
         ```python
         def minus_and_product(x, y):
             return x - y, x * y
