@@ -14,4 +14,4 @@ compare_speed = []
 for i in range(100):
     compare_speed.append(test_speed[i] - speed_limit[i])
 
-print(max(compare_speed))
+print(max(max(compare_speed), 0))
