@@ -79,3 +79,16 @@
     - body
         - \<!-- 이것은 주석 -->
         
+
+    - form
+        - \<form>은 정보를 서버에 제출하기 위해 사용하는 태그
+        - action : form을 처리할 서버의 URL
+        - method : form을 제출할 때 사용할 HTTP 메서드
+        - enctype : method가 post인 경우 데이터의 유형
+    - input
+        - 다양한 타입을 가지는 입력 데이터 유형과 위젯이 제공됨
+        - name : form control에 적용되는 이름
+        - value : form xontrol에 적용되는 값
+        - required, readonly, autofocus autocomplete, disabled 등
+
+    - input label
