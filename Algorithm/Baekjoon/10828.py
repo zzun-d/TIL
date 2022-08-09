@@ -1,8 +1,9 @@
+import sys
+
 t = int(input())
 l = []
-
 for _ in range(t):
-    c = input().split()
+    c = sys.stdin.readline().split()
     if c[0][:2] == 'pu':
         l.append(c[1])
     elif c[0][0] == 't':
@@ -22,4 +23,3 @@ for _ in range(t):
             print(0)
         else:
             print(1)
-        
