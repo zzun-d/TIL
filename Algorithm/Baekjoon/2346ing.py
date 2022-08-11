@@ -1,8 +1,15 @@
 N = int(input())
-
-idx = [i for i in range(1, N+1)]
 nums = list(map(int, input().split()))
+bal_num = [i for i in range(1, N+1)]
 ans = []
 now = 0
-for i, num in enumerate(nums):
-    if N-i < now + num or 0 > now + num:
+for i in range(N):    
+    ans.append(bal_num.pop(now))
+    mv = nums.pop(now)
+    if mv > 0:
+        now = (now + mv) % (N-i) - 1
+    else:
+        now += mv
+    if now < 0 :
+        now = (N-i-1) + now
+print(ans)
