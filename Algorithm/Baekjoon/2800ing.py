@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 def remove_cover(s, idx):
     return s[:idx[0]] + s[idx[0]+1:idx[1]] + s[idx[1]+1:]
     
@@ -17,7 +16,6 @@ for i in range(1<<10):
         if i & (1<<j):
             print(remove_cover(prob, ans[j]))
 
-=======
 prob = input()
 ans = []
 p_l = []
@@ -31,4 +29,3 @@ print(ans)
 
 for i in range(1<<5):
     pass
->>>>>>> a4257e25f11180a6329d30ee6bdd4a570b17ab93
