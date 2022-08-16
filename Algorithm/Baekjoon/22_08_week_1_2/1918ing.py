@@ -1,3 +1,7 @@
+import sys
+def input():
+    return sys.stdin.readline().rstrip()
+
 prob = input()
 bracket_sign = []
 bracket_num = []
