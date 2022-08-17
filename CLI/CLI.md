@@ -50,10 +50,23 @@
   - CLI창 모두 지우기
 - **vi test.tst**
   - vi 편집기로 test.txt를 편집하겠다.
-  - i or insert 입력 후 편집 가능
-![untitled](https://github.com/zzun-d/TIL/blob/master/CLI/CLI.assets/Untitled2.png?raw=true)  
+  - 명령모드(esc 눌렀을 때 혹은 vi 들어가자마자 상태)
+    - i or insert: 현재 커서 위치에 삽입
+![untitled](https://github.com/zzun-d/TIL/blob/master/CLI/CLI.assets/Untitled2.png?raw=true)
 
-  <br/>
+    - a: 현재 커서 바로 다음위치에 삽입
+    - u: 방금 명령 취소
+  <br>
+  
+  - 마지막 행 모드(esc 누르고 콜론(:) 누른상태)
+    - w [파일명]: 파일 저장(꺼지지는 않음)
+    - q: vi 종료(저장 안됨)
+    - wq: 저장 후 종료
+  <br>
+
+  [이외의 vi 편집기 명령어 모음](https://blockdmask.tistory.com/25)
+
+<br>
 
 ![untitled](https://github.com/zzun-d/TIL/blob/master/CLI/CLI.assets/Untitled.png?raw=true)  
 
