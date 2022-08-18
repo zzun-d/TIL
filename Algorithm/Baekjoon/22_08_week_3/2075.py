@@ -13,6 +13,5 @@ for i in range(N):
     while len(heap) > N:                            # heap 길이가 N을 초과하면 N이 될 때까지 pop
         heapq.heappop(heap)
 
-
 print(min(heap))        # heap의 길이가 N과 같으므로 최솟값이 N번째로 큰 값
 
