@@ -1,30 +1,48 @@
 import sys
 import heapq
 
-def solved_pop(heap, g=0, m=0, l=0):
+def solved_pop(heap, tmp=1, g=0, m=0, l=0):
     if g:
         while heap[g][m]:
-            if visited[(-1**m)*heap[g][m][0][1]] == (-1**m)*heap[g][m][0][0]:
+            if visited[((-1)**m)*heap[g][m][0][1]] == ((-1)**m)*heap[g][m][0][0]:
                 break
             else:
                 heapq.heappop(heap[g][m])
-        return (-1**m)*heap[g][m][0][1], heap
+        return ((-1)**m)*heap[g][m][0][1], heap
+
+    elif l:
+        sub_heap = []
+        if tmp:
+            while heap:
+                if visited[((-1)**m)*heap[0][1]] == ((-1)**m)*heap[0][0]:
+                    if ((-1)**m)*heap[0][0] < l:
+                        heapq.heappush(sub_heap, heapq.heappop(heap))
+                    else:
+                        break
+                else:
+                    heapq.heappop(heap)
+        else:
+            while heap:
+                if visited[((-1)**m)*heap[0][1]] == ((-1)**m)*heap[0][0]:
+                    if ((-1)**m)*heap[0][0] >= l:
+                        heapq.heappush(sub_heap, heapq.heappop(heap))
+                    else:
+                        break
+                else:
+                    heapq.heappop(heap)
+        if heap:
+            return ((-1)**m)*heap[0][1], sub_heap+heap
+        else:
+            return -1, sub_heap
 
     else:
-        sub_heap = []
         while heap:
-            if visited[(-1**m)*heap[0][1]] == (-1**m)*heap[0][0]:
-                if (-1**m)*heap[0][0] < l:
-                    heapq.heappush(sub_heap, heapq.heappop(heap))
-                else:
-                    break
-            else:           
+            if visited[((-1)**m)*heap[0][1]] == ((-1)**m)*heap[0][0]:
+                break
+            else:
                 heapq.heappop(heap)
-        if sub_heap:
-            heap = sub_heap + heap
 
-        return (-1**m)*heap[0][1], sub_heap+heap
-
+        return ((-1)**m)*heap[0][1], heap
             
 input = sys.stdin.readline
 
@@ -52,18 +70,18 @@ for _ in range(M):
 
     elif cmd[0] == 'recommend2':
         if cmd[1] == '1':
-            ans, p_max = solved_pop(p_max, m=1)
+            ans, p_max = solved_pop(p_max, tmp=0, m=1)
             print(ans)
         else:
-            ans, p_min = solved_pop(p_min, m=0)
+            ans, p_min = solved_pop(p_min, tmp=1, m=0)
             print(ans)
     
     elif cmd[0] == 'recommend3':
         if cmd[1] == '1':
-            ans, p_min = solved_pop(p_min, m=0, l=int(cmd[2])+1)
+            ans, p_min = solved_pop(p_min, tmp=1, m=0, l=int(cmd[2]))
             print(ans)
         else:
-            ans, p_max = solved_pop(p_max, m=1, l=int(cmd[2]))
+            ans, p_max = solved_pop(p_max, tmp=0, m=1, l=int(cmd[2]))
             print(ans)
 
     elif cmd[0] == 'add':       # add면 최대. 최소 heap에 (난이도, 번호)로 push
