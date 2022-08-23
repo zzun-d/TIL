@@ -16,6 +16,7 @@ test_y = y_data[8000:]
 class MyModel(nn.Module):
     def __init__(self):
         super().__init__()
+
         self.linear_1 = nn.Linear()
     def forward():
         1
