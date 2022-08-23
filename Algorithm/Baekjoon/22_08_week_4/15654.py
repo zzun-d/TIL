@@ -1,10 +1,14 @@
 N, M = map(int, input().split())
+l = list(map(int, input().split()))
+l.sort()
 ans = []
 
 def dfs():
     if len(ans) == M:
         print(*ans)
-    for i in range(1, N+1):
+        return
+    
+    for i in l:
         if i not in ans:
             ans.append(i)
             dfs()
