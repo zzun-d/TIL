@@ -5,6 +5,7 @@ result = []
 cnt = 0
 ans = ''
 visited = [False] * N
+
 def dfs():
     global ans, cnt
     if cnt == M:
@@ -25,6 +26,7 @@ def dfs():
             visited[i] = False
 
 dfs()
+
 result = list(set(result))
 result.sort()
 
