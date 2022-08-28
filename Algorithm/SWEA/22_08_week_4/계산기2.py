@@ -1,9 +1,9 @@
-for t in range(1, 11):
+for t in range(1):
     _ = input()
     prob = input()
     stack = []
     trans = ''
-
+    
     for p in prob:
 
         if p not in ['+', '*']:
@@ -22,6 +22,19 @@ for t in range(1, 11):
 
     while stack:
         trans += stack.pop()
+
+    for p in trans:
+
+        if p not in ['+', '*']:
+            stack.append(p)
+        
+        else:
+            if p == '*':
+                stack.append(int(stack.pop()) * int(stack.pop()))
+            else:
+                stack.append(int(stack.pop()) + int(stack.pop()))
+    
+    print(f'#{t} {stack[0]}')
 
 
 
