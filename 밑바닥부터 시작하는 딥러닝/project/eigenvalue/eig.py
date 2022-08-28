@@ -11,8 +11,10 @@ for _ in tqdm(range(10000)):
     save_input.append(mat)
     mat = np.array(mat)
     eig_val, eig_vec = np.linalg.eig(mat)
-    save_output.append(max(eig_val))
+    save_output.append([(eig_val.real**2 + eig_val.imag**2)**0.5])
+    
 
+print(save_output[:10])
 save_input = np.array(save_input)
 save_output = np.array(save_output)
 np.save('./input', save_input)

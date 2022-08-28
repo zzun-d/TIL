@@ -10,16 +10,20 @@ import numpy as np
 # 복소수 존재로 인하여 MSE 사용시 실수부, 복소수부 나눠서 MSE구하고 더하는 방식으로 진행해 보자.
 
 if torch.cuda.is_available():
-    device = torch.device("cuda") 
+    device = torch.device("cuda")
 else:
     device = torch.device("cpu")
 
 x_data = np.load('C:/Users/Junhyuk/ssafy08/TIL/밑바닥부터 시작하는 딥러닝/project/eigenvalue/input.npy')
 y_data = np.load('C:/Users/Junhyuk/ssafy08/TIL/밑바닥부터 시작하는 딥러닝/project/eigenvalue/output.npy')
-train_x = torch.from_numpy(x_data) 
+train_x = torch.from_numpy(x_data)
 train_y = torch.from_numpy(y_data)
+train_y = torch.tensor(train_y)
 train_x = torch.tensor(train_x, dtype= torch.float32)
 train_y = torch.tensor(train_y, dtype= torch.float32).real
+
+print(train_y[:10])
+assert 1==0
 # train_x = torch.unsqueeze(train_x, 0)
 # train_y = torch.unsqueeze(train_y, 0)
 class CustomDataset(Dataset):
@@ -98,7 +102,6 @@ for epoch in range(10):
 
         outputs = net(inputs)
         loss = criterion(outputs, labels)
-        
         
         optimizer.zero_grad()
         loss.backward()
