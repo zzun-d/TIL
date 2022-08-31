@@ -1,4 +1,5 @@
 import sys
+from itertools import combinations
 input = sys.stdin.readline
 
 def dfs(l):
@@ -28,9 +29,10 @@ alpha = []
 ans = 0
 for _ in range(N):
     alpha.append(set(input()[4:-4]) - set(['a', 'n', 't', 'i', 'c']))
-lst = list('bdefghjklmopqrsuvwxyz')
 visited = [0] * 21
 n = K - 5
+lst = list('bdefghjklmopqrsuvwxyz')
+lst = combinations(lst, n)
 x = []
 if n > 0:
     dfs(list())
