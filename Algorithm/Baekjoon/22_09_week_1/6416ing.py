@@ -18,6 +18,10 @@ while True:
             TMP = False
             break
     if TMP:
+        if len(tree) == 1:
+            print(f'Case {tc} is a tree.')
+            continue
+
         v_lst = []
         for i in list(tree.values()):
             v_lst += i
