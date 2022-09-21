@@ -9,6 +9,10 @@ for _ in range(N):
     x, a = map(int, input().split())
     p[x] = a
 p_k = sorted(list(p.keys()))
-avg = p_k[0]*p[p_k[0]]
-
-
+v = sum(p.values())
+sm = 0
+i = 0
+while sm*2 < v:
+    sm += p[p_k[i]]
+    i += 1
+print(p_k[i-1])
