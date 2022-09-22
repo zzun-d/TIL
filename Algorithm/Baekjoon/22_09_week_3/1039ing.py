@@ -1,11 +1,12 @@
-T = int(input())
-for tc in range(1, T+1):
-    N, K = input().split()
-    mx = int(N)
-    N = list(map(int, list(N)))
-    n_lst = sorted(N, reverse=True)
-    K = int(K)
-    idx = 0
+N, K = input().split()
+mx = int(N)
+N = list(map(int, list(N)))
+n_lst = sorted(N, reverse=True)
+K = int(K)
+idx = 0
+if len(n_lst) == 1 or (n_lst[1] == 0 and len(n_lst) == 2):
+    print(-1)
+else:
     while K and idx < len(N):
         if N[idx] != n_lst[idx]:
             Mn_cnt = N[idx:].count(n_lst[idx])
@@ -25,6 +26,9 @@ for tc in range(1, T+1):
     if K:
         if K%2 and len(N) == len(set(N)):
             N[-2], N[-1] = N[-1], N[-2]
+
+    if N[0] == 0:
+        print(-1)
+    else:
+        print(''.join(map(str, N)))
     
-    print(f'#{tc}', ''.join(map(str, N)))
-        
