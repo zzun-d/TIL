@@ -1,54 +1,52 @@
-from collections import deque
+from heapq import heappush, heappop
+import sys
+
+def input():
+    return sys.stdin.readline().rstrip()
 
 
-def move():
-    global f_lst
-    cnt = 0
-    while f_lst:
-        cnt += 1
-        nxt = {}
-        check_lst = []
-        for _ in range(len(f_lst)):
-            i, j, t = f_lst.pop()
-            for di, dj in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
-                ni = i + di
-                nj = j + dj
-                if 0 <= ni < R and 0 <= nj < C and visited[ni][nj] == 0:
+N, M = map(int, input().split())
+arr = [list(input()) for _ in range(N)]
+queue = []
+for i in range(N):
+    for j in range(M):
+        if arr[i][j] == 'F':
+            heappush(queue, (0, i, j))
 
-                    if t > 0:
-                        visited[ni][nj] = 1
-                        if not nxt.get((ni, nj)):
-                            nxt[(ni, nj)] = (ni, nj, 1)
-                            if ni == 0 or nj == 0 or ni == R-1 or nj == C-1:
-                                check_lst.append((ni, nj))
-                    else:
-                        visited[ni][nj] = -1
-                        if not nxt.get((ni, nj)) or nxt.get((ni, nj)) == (ni, nj, 1):
-                            nxt[(ni, nj)] = (ni, nj, -1)
-        for i, j in check_lst:
-            if nxt[(i, j)] == (i, j, 1):
-                cnt += 1
-                return cnt
-        f_lst = list(nxt.values())
-        
-    return 'IMPOSSIBLE'
+        elif arr[i][j] == 'J':
+            heappush(queue, (1, i, j))
+            si = i
+            sj = j
 
+cnt = 0
+tmp = True
+if si == 0 or si == N-1 or sj == 0 or sj == M-1:
+    cnt += 1
+    tmp = False
 
-R, C = map(int, input().split())
-arr = [list(input()) for _ in range(R)]
-visited = [[0]*C for _ in range(R)]
-f_lst = []
-for i in range(R):
-    for j in range(C):
-        if arr[i][j] == '.':
-            continue
-        elif arr[i][j] in ['#', 'F']:
-            visited[i][j] = -1
-            if arr[i][j] == 'F':
-                f_lst.append((i, j, -1))
-        else:
-            f_lst.append((i, j, 1))
+while queue and tmp:
+    cnt += 1
+    for _ in range(len(queue)):
+        s, i, j = heappop(queue)
+        for di, dj in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+            ni = i + di
+            nj = j + dj
+            if 0 <= ni < N and 0 <= nj < M:
+                if not s%2 and arr[ni][nj] in ['.', 'J']:
+                    heappush(queue, (s+2, ni, nj))
+                    arr[ni][nj] = 'F'
+                elif s%2 and arr[ni][nj] == '.':
+                    if ni == 0 or ni == N - 1 or nj == 0 or nj == M - 1:
+                        tmp = False
+                        cnt += 1
+                        break
+                    heappush(queue, (s+2, ni, nj))
+                    arr[ni][nj] = 'J'
+        if not tmp:
+            break
 
-ans = move()
-print(ans)
+if tmp:
+    print('IMPOSSIBLE')
+else:
+    print(cnt)
 
