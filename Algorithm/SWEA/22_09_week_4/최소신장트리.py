@@ -11,10 +11,6 @@ def union_set(a, b):
     kruskal[b] = find_set(a)
 
 
-
-
-
-
 T = int(input())
 
 for tc in range(1, T+1):
