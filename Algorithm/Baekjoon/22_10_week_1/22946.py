@@ -46,14 +46,28 @@ for i in list(graph.keys()):
             graph[j].append(i)
 
 queue = deque()
-queue.append((0, 0))
+queue.append((0))
 visited = [0] * (N+1)
 visited[0] = 1
-path = []
+while queue:
+    n = queue.popleft()
+    for i in graph[n]:
+        if not visited[i]:
+            visited[i] = 1
+            queue.append(i)
+
+queue = deque()
+queue.append((n, 0))
+visited = [0] * (N+1)
+visited[n] = 1
+
 while queue:
     n, cnt = queue.popleft()
     for i in graph[n]:
         if not visited[i]:
             visited[i] = 1
-            queue.append((i, cnt+1))
-cnt 
+            queue.append((i, cnt + 1))
+if n == 0:
+    print(cnt - 1)
+else:
+    print(cnt)
