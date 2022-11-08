@@ -1,9 +1,3 @@
-
-
-
-## 반례 내놔!!!!!!!!!!!1
-
-
 message = input()
 key = input()
 key_chars = 'ABCDEFGHIKLMNOPQRSTUVWXYZ'
@@ -21,7 +15,6 @@ for k in key:
 key_setting += key_chars
         
 msgs = []
-
 while message:
     if len(message) >= 2:
         if message[0] != message[1]:
@@ -29,15 +22,11 @@ while message:
             message = message[2:]
             
         
-        elif message[0] == 'X':
-            if len(message) == 2:
-                msgs.append('XX')
-                message = False
-            
-            else:
-                msgs.append('XQ')
-                message = message[1:]
         
+        elif message[0] == 'X':
+            msgs.append('XQ')
+            message = message[1:]
+
         else:
             msgs.append(message[0] + 'X')
             message = message[1:]
@@ -45,7 +34,6 @@ while message:
     else:
         msgs.append(message[0] + 'X')
         message = False
-print(msgs)
 answer = ''
 
 for old_1, old_2 in msgs:
@@ -82,3 +70,5 @@ for old_1, old_2 in msgs:
         new_2 = key_setting[(old_2_row * 5) + old_1_col]
     
     answer += new_1 + new_2
+
+print(answer)
