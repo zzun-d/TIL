@@ -1,42 +1,28 @@
-from collections import defaultdict
-
-def binary_search(s, e):
-    global ans
-    if e - s <= 1:
-        sm = 0
-        for i in range(1, e+1):
-            if c_dict[i] != 0:
-                sm += (e-i)**2 * c_dict[i]
-        if sm <= K:
-            ans = e
-        else:
-            ans = s
-            
+def binary_search(l, r):
+    global answer
+    if l + 1 == r:
+        answer = l
         return
-    m = (s+e)//2
-    sm = 0
-    i = 1
-    while sm < K and i < m:
-        if c_dict[i] != 0:
-            sm += (m-i)**2 * c_dict[i]
-        i += 1
-    if i == m and sm < K:
-        binary_search(m, e)
+    cost = 0
+    m = (l+r) // 2
+    for p in lst:
+            
+        if cost > B:
+            binary_search(l, m)
+            break
+        if p < m:
+            cost += (m - p)**2
     else:
-        binary_search(s, m)
+        if cost <= B:
+            binary_search(m, r)
+        else:
+            binary_search(l, m)
+    return
 
-
-N, K = map(int, input().split())
-
-c_dict = defaultdict(int)
-
-for n in map(int, input().split()):
-    c_dict[n] += 1
-
-ans = 0
-
-binary_search(0, 2000000000)
-
-print(ans)
-
+N, B = map(int, input().split())
+lst = list(map(int, input().split()))
+lst.sort()
+answer = 0
+binary_search(0, 2*10**9)
+print(answer)
 
