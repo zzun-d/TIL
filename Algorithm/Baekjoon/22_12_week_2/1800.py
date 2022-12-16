@@ -1,16 +1,25 @@
-from collections import deque, defaultdict
+import heapq, sys
+
+def input():
+    return sys.stdin.readline().rstrip()
 
 N, P, K = map(int, input().split())
-graph = defaultdict(list)
+graph = [[0] * N for _ in range(N)]
 for _ in range(P):
-    n1, n2, price = map(int, input().split())
-    graph[n1].append((n2, price))
-    graph[n2].append((n1, price))
+    a, b, c = map(int ,input().split())
+    graph[a-1][b-1] = c
+    graph[b-1][a-1] = c
 
 
-queue = deque([(1, {1}, [0])])
-cost = -1
-while queue:
-    num, cable_set, prices = queue.popleft()
-    for n, p in graph[num]:
-        pass
+def total_cost(lst):
+    if len(lst) <= K:
+        
+
+def bfs(n, v, cables):
+    for i in range(N):
+        if graph[n][i] == 0 or not v[i]:
+            continue
+        if i == N-1:
+            heapq.heappush(cables, graph[n][i])
+            return total_cost(cables)
+        v[i] = True
