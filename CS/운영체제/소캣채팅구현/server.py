@@ -12,8 +12,7 @@ def Send(group, send_queue):
             if recv == 'Group Changed':
                 print('Group Changed')
                 break
-            elif recv == 'Full':
-                print('5명 꽉참 !')
+
 
             #for 문을 돌면서 모든 클라이언트에게 동일한 메시지를 보냄
             for conn in group:
@@ -49,6 +48,7 @@ if __name__ == '__main__':
         group.append(conn) #연결된 클라이언트의 소켓정보
         print('Connected ' + str(addr))
 
+
         #소켓에 연결된 모든 클라이언트에게 동일한 메시지를 보내기 위한 쓰레드(브로드캐스트)
         #연결된 클라이언트가 1명 이상일 경우 변경된 group 리스트로 반영
 
@@ -57,10 +57,6 @@ if __name__ == '__main__':
             thread1 = threading.Thread(target=Send, args=(group, send_queue,))
             thread1.start()
             pass
-        elif count >= 3:
-            send_queue.put('Full')
-            thread1 = threading.Thread(target=Send, args=(group, send_queue,))
-            thread1.start()
         else:
             thread1 = threading.Thread(target=Send, args=(group, send_queue,))
             thread1.start()
