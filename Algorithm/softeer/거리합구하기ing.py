@@ -1,6 +1,9 @@
 from collections import defaultdict
 import heapq
 import sys
+import heapq
+from collections import deque
+
 
 def input():
     return sys.stdin.readline().rstrip()
