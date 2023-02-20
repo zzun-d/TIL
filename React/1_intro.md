@@ -65,7 +65,36 @@ ReactDPM.render(
 - 또한 해킹방지(사용자 입력칸에 JS문법을 넣어 해킹하는 해킹방법에서 자유로움, why? -> JSX는 입력을 JS로 보지않고 우선 문자열로 바꾸어 읽기 때문에 ! )
   <br>
 
-### React 메서드
+### React Element
+
+- 리액트 앱의 가장 작은 블록들로 이해하면 됨
+- Virtual DOM에 올라가 있는 엘리먼트가 리액트 엘리먼트
+- 돔 엘리먼트의 가상표현이라 볼 수 있다
+- 화면에서 보이는 것들을 기술
+- 자바스크립트 객체 형태로 존재
+
+```jsx
+{
+  type: 'button',
+  props: {
+    className: 'bg-green',
+    children: {
+      type: 'b',
+      props: {
+        children: 'Hello, element!'
+      }
+    }
+  }
+}
+```
+
+- **리액트 엘리먼트는 불변성의 특징을 가짐**
+  - 엘리먼트 생성 후에는 children이나 attributes를 바꿀 수 없다
+  - 한번 생성 후에는 변경 불가
+  - 화면에 보여지는 엘리먼트를 변경하고 싶다면?
+    - 기존 엘리먼트 대신 새로운 엘리먼트를 만들어서 대체해야 함
+
+### React 메서드(jsx 안쓸 경우)
 
 - **React.createElement**
 
