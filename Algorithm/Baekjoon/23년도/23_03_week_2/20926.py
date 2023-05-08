@@ -19,6 +19,7 @@ def find_tera():
                 return si, sj, ei, ej
 
 def sliding(x, y, i):
+    D = [(1, 0), (0, 1), (-1, 0), (0, -1)]
     t = 0
     while True:
         x += D[i][0]
@@ -35,11 +36,9 @@ def sliding(x, y, i):
         else:
             return False
 
-D = [(1, 0), (0, 1), (-1, 0), (0, -1)]
-
 W, H = map(int, input().split())
 arr = [input() for _ in range(H)]
-INF = sys.maxsize
+INF = 500*500*9
 dijk = [[INF for _ in range(W)] for _ in range(H)]
 si, sj, ei, ej = find_tera()
 dijk[si][sj] = 0

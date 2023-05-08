@@ -21,35 +21,20 @@ h_lst = [(0, 0)]
 prime_lst = [-1]*8500
 INF = sys.maxsize
 dijk = [INF for _ in range(N+2)]
-for i in range(2, N+2):
+for _ in range(N):
     x, y = map(int, input().split())
     nodes.append((x, y))
-    # tmp = distance(x1, y1, x, y)
-    # if prime_lst[tmp] < 0:
-    #     prime_lst[tmp] = is_prime(tmp)
-
-    # if prime_lst[tmp] > 0:
-    #     heapq.heappush(h_lst, (tmp, i))
-
-# tmp = distance(x1, y1, x2, y2)
-# if prime_lst[tmp] < 0:
-#     prime_lst[tmp] = is_prime(tmp)
-# if prime_lst[tmp] > 0:
-#     heapq.heappush(h_lst, (tmp, 1))
-
 
 ans = -1
 
 while h_lst:
-    # print(h_lst)
     d, i = heapq.heappop(h_lst)
     if d > dijk[i]:
-        continue
+        continue    
     
     if i == 1:
         ans = d
         break
-
 
     for j in range(N+2):
         x, y = nodes[j]
